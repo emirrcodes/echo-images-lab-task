@@ -1,0 +1,11 @@
+filepath,patient_id,label,prediction,error,abs_error
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient295_4CH_sequence.npy,patient295,20.0,51.175808,31.17580795288086,31.17580795288086
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient210_4CH_sequence.npy,patient210,77.7,51.17544,-26.524558258056643,26.524558258056643
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient058_4CH_sequence.npy,patient058,29.6,51.174984,21.574983978271483,21.574983978271483
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient370_4CH_sequence.npy,patient370,72.5,51.175247,-21.324752807617188,21.324752807617188
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient396_4CH_sequence.npy,patient396,30.9,51.17547,20.27546844482422,20.27546844482422
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient232_4CH_sequence.npy,patient232,71.1,51.17479,-19.925210571289057,19.925210571289057
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient194_4CH_sequence.npy,patient194,70.4,51.175415,-19.224584960937506,19.224584960937506
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient383_4CH_sequence.npy,patient383,69.7,51.175358,-18.524642181396487,18.524642181396487
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient133_4CH_sequence.npy,patient133,69.6,51.175102,-18.424897766113276,18.424897766113276
+/Users/emirarslan/Downloads/lab task/echo-project/data/raw/echo2022/train_data/4CH/patient262_4CH_sequence.npy,patient262,68.6,51.175316,-17.4246841430664,17.4246841430664

@@ -1,0 +1,2 @@
+val_rmse,val_mae,val_r2,n_train,n_val,n_frames,img_size,batch_size,epochs
+11.164773885006374,9.04694652557373,-0.04175972938537598,320,80,10,"(256, 256)",8,10
