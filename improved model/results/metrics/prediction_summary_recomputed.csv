@@ -1,0 +1,11 @@
+metric,value
+Validation RMSE,11.937667446060573
+Validation MAE,8.847854614257812
+Validation R2,-0.007808685302734375
+Prediction mean,54.068031311035156
+Prediction std,2.405484437942505
+Target mean,52.00250244140625
+Target std,11.891329765319824
+Median abs error,6.768021392822266
+Best-case abs error,0.1616226196289076
+Worst-case abs error,45.32191467285156

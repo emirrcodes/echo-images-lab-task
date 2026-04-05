@@ -1,0 +1,49 @@
+{
+  "seed": 42,
+  "config": {
+    "img_size": [
+      160,
+      160
+    ],
+    "n_frames": 24,
+    "batch_size": 4,
+    "epochs": 50,
+    "learning_rate": 0.0003,
+    "dropout_rate": 0.3,
+    "lstm_units": 64,
+    "dense_units": 128,
+    "val_size": 0.2,
+    "lr_patience": 3,
+    "early_stop_patience": 8,
+    "stats_max_patients": 160,
+    "stats_frames_per_view": 8,
+    "stats_resize": [
+      96,
+      96
+    ],
+    "clip_percentiles": [
+      1.0,
+      99.0
+    ],
+    "handcrafted_frames": 12,
+    "handcrafted_resize": [
+      96,
+      96
+    ],
+    "ridge_alpha": 1.0
+  },
+  "target_stats": {
+    "mean": 52.17375,
+    "std": 11.98748920385238
+  },
+  "normalization_stats": {
+    "clip_low": 0.0,
+    "clip_high": 210.6328125,
+    "scaled_mean": 0.22589109918257205,
+    "scaled_std": 0.2614479142723605,
+    "sampled_patients": 160,
+    "frames_per_view": 8,
+    "stats_height": 96,
+    "stats_width": 96
+  }
+}
