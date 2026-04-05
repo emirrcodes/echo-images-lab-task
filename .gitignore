@@ -1,6 +1,15 @@
 data/raw/
 data/processed/
+segmentation/data/
+
+results/models/
+segmentation/results/models/
+improved model/results/models/
+*.keras
+
 __pycache__/
 .ipynb_checkpoints/
+.venv/
+.venv-1/
 .DS_Store
 *.pyc
