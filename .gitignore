@@ -3,6 +3,9 @@ data/processed/
 segmentation/data/
 segmentation model/data/
 segmentation model/kaggle_final_output/
+segmentation/kaggle_final_output/output.zip
+segmentation/kaggle_final_output/working_output.zip
+segmentation/kaggle_final_output/segmentation/results/models/
 
 results/models/
 segmentation/results/models/

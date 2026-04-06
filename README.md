@@ -4,12 +4,14 @@ This repository is a cleaned-up baseline for the ECHO2022 echocardiography task.
 The current work focuses on estimating `LV_ef` directly from `.npy` echo
 sequences with a simple TimeDistributed CNN + LSTM model.
 
-The repo is not an empty environment scaffold anymore. It now has three clear
-layers:
+The repo is not an empty environment scaffold anymore. It now has five clear
+work areas:
 
-- `notebooks/`: exploration, baseline reproduction, and result inspection
-- `src/`: reusable Python modules extracted from notebook logic
-- `results/`: saved model weights, metrics, figures, and submission artifacts
+- `notebooks/`: exploration, baseline reproduction, and result inspection for EF regression
+- `src/`: reusable Python modules extracted from the baseline notebook logic
+- `results/`: baseline regression artifacts
+- `improved model/`: dual-view EF regression experiments and comparison artifacts
+- `segmentation/`: EchoNet-Dynamic segmentation notebooks, outputs, and Kaggle export files
 
 ## Project goal
 
@@ -70,7 +72,7 @@ Purpose:
 - train a TimeDistributed CNN + LSTM regressor,
 - evaluate validation performance and generate a Kaggle-style submission file.
 
-Saved outputs already present in this repo:
+Generated outputs currently available in this workspace:
 
 - `results/models/baseline_best.keras`
 - `results/metrics/baseline_history.csv`
@@ -88,7 +90,7 @@ Purpose:
 - analyze error patterns,
 - inspect the best and worst prediction cases visually.
 
-Saved outputs already present in this repo:
+Generated outputs currently available in this workspace:
 
 - `results/metrics/validation_predictions.csv`
 - `results/metrics/top10_best_validation_cases.csv`
@@ -102,6 +104,30 @@ Saved outputs already present in this repo:
 - `results/figures/worst_case_1.png`
 - `results/figures/worst_case_2.png`
 - `results/figures/worst_case_3.png`
+
+### `improved model/01_improved_training.ipynb`
+
+Purpose:
+
+- extend the baseline into a dual-view `2CH + 4CH` regression setup,
+- test more stable preprocessing and training choices,
+- compare the deep model against naive and handcrafted baselines.
+
+Generated outputs currently available in this workspace:
+
+- `improved model/results/metrics/model_comparison.csv`
+- `improved model/results/metrics/prediction_summary.csv`
+- `improved model/results/metrics/validation_predictions.csv`
+- `improved model/results/figures/improved_training_curves.png`
+- `improved model/results/figures/validation_overview.png`
+
+### `improved model/02_improved_results_visualization.ipynb`
+
+Purpose:
+
+- reload the saved dual-view model,
+- recompute validation summaries,
+- visualize best and worst cases from the improved experiment.
 
 ### `segmentation/notebooks/01_dataset_audit.ipynb`
 
@@ -126,6 +152,14 @@ Purpose:
 - train a PyTorch U-Net baseline for left ventricle segmentation,
 - use the EchoNet-Dynamic tracings as supervision,
 - save training outputs for later qualitative and quantitative comparison.
+
+### `segmentation/notebooks/04_model_evaluation_and_error_analysis.ipynb`
+
+Purpose:
+
+- reload the saved segmentation checkpoint,
+- compute split-level and phase-level metrics,
+- summarize qualitative successes and failure cases.
 
 ## Source modules
 
@@ -161,12 +195,19 @@ echo-project/
 |   |-- 01_data_exploration.ipynb
 |   |-- 02_baseline_reproduction.ipynb
 |   `-- 03_results_visualization.ipynb
+|-- improved model/
+|   |-- 01_improved_training.ipynb
+|   |-- 02_improved_results_visualization.ipynb
+|   `-- results/
 |-- results/
 |   |-- figures/
 |   |-- metrics/
 |   |-- models/
 |   `-- baseline_submission.csv
-|-- slides/
+|-- segmentation/
+|   |-- notebooks/
+|   |-- results/
+|   `-- src/
 |-- src/
 |   |-- data_loader.py
 |   |-- evaluate.py
@@ -193,7 +234,8 @@ python -m ipykernel install --user --name echo-project --display-name "echo-proj
 For the segmentation notebooks, the same environment also needs PyTorch and
 `scikit-image`, which are now included in `requirements.txt`. If the notebook
 kernel was created before updating dependencies, reactivate the environment and
-rerun `pip install -r requirements.txt` before reopening Jupyter.
+rerun `pip install -r requirements.txt` before reopening Jupyter. The
+segmentation workflow lives under `segmentation/`.
 
 ## Minimal usage example
 
@@ -224,5 +266,6 @@ This phase establishes a cleaner story for the repo:
 
 - the project purpose is explicit,
 - notebook outputs are documented,
+- the regression, improved-model, and segmentation areas are separated,
 - the folder structure is easy to explain,
 - baseline logic is no longer trapped inside notebooks.
