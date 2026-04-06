@@ -1,9 +1,12 @@
 data/raw/
 data/processed/
 segmentation/data/
+segmentation model/data/
+segmentation model/kaggle_final_output/
 
 results/models/
 segmentation/results/models/
+segmentation model/results/models/
 improved model/results/models/
 *.keras
 

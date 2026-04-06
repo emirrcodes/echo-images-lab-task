@@ -103,6 +103,30 @@ Saved outputs already present in this repo:
 - `results/figures/worst_case_2.png`
 - `results/figures/worst_case_3.png`
 
+### `segmentation/notebooks/01_dataset_audit.ipynb`
+
+Purpose:
+
+- inspect the EchoNet-Dynamic segmentation dataset layout,
+- verify `FileList.csv`, `VolumeTracings.csv`, and the `Videos/` folder,
+- quantify which studies have usable tracings for mask generation.
+
+### `segmentation/notebooks/02_tracing_to_mask_sanity_checks.ipynb`
+
+Purpose:
+
+- convert tracing polygons into raster masks,
+- visually sanity-check mask alignment against source frames,
+- validate the preprocessing assumptions before training a segmentation model.
+
+### `segmentation/notebooks/03_unet_baseline_training.ipynb`
+
+Purpose:
+
+- train a PyTorch U-Net baseline for left ventricle segmentation,
+- use the EchoNet-Dynamic tracings as supervision,
+- save training outputs for later qualitative and quantitative comparison.
+
 ## Source modules
 
 The reusable notebook code has been organized under `src/`:
@@ -165,6 +189,11 @@ pip install --upgrade pip
 pip install -r requirements.txt
 python -m ipykernel install --user --name echo-project --display-name "echo-project"
 ```
+
+For the segmentation notebooks, the same environment also needs PyTorch and
+`scikit-image`, which are now included in `requirements.txt`. If the notebook
+kernel was created before updating dependencies, reactivate the environment and
+rerun `pip install -r requirements.txt` before reopening Jupyter.
 
 ## Minimal usage example
 
